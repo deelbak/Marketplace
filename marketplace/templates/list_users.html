@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Список пользователей</title>
+</head>
+<body>
+<h2>Список пользователей</h2>
+{{ if .error }}
+<p style="color:red">{{ .error }}</p>
+{{ end }}
+{{ if .users }}
+<ul>
+    {{ range .users }}
+    <li>{{ .Name }} - {{ .Email }} | <p style="color: gray">{{ .Password }}</p></li>
+    {{ end }}
+</ul>
+{{ else }}
+<p>Нет зарегистрированных пользователей</p>
+{{ end }}
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Создание продукта</title>
+</head>
+<body>
+<h2>Создание нового продукта</h2>
+{{ if .error }}
+<p style="color: red">{{ .error }}</p>
+{{ end }}
+{{ if .message }}
+<p style="color: green">{{ message }}</p>
+{{ end }}
+
+<form action="/create_product" method="post">
+
+    <label for="name">Наименование товара:</label><br>
+    <input type="text" id="name" name="name" required><br>
+
+    <label for="description">Описание товара:</label><br>
+    <input type="text" id="description" name="description"><br>
+
+    <label for="price">Цена:</label><br>
+    <input type="number" id="price" name="price" required><br>
+
+    <label for="category">Категория товара:</label><br>
+    <input type="radio" id="category" name="category" required><br>
+
+    <br>
+    <button type="submit">Создать товар</button>
+
+
+</form>
+</body>
+</html>

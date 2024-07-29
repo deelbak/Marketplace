@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Создание пользователя</title>
+</head>
+<body>
+<h2>Создание нового пользователя</h2>
+{{ if .error }}
+<p style="color:red">{{ .error }}</p>
+{{ end }}
+{{ if .message }}
+<p style="color:green">{{ .message }}</p>
+{{ end }}
+<form action="/create-user" method="post">
+    <label for="name">Имя:</label><br>
+    <input type="text" id="name" name="name" required><br>
+
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email" required><br>
+
+    <label for="password">Пароль:</label><br>
+    <input type="password" id="password" name="password" required><br>
+
+    <br>
+    <button type="submit">Создать пользователя</button>
+</form>
+</body>
+</html>
